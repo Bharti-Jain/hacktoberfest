@@ -1,4 +1,4 @@
-arr = [34, 2, 10, -9, 7, 5]
+arr = list(map(int, input("Enter numbers separated by spaces: ").split()))
 
 index = 0
 while index < len(arr):
