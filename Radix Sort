@@ -1,4 +1,4 @@
-def counting_sort(arr, exp):
+def counting_sort_exp(arr, exp):
     n = len(arr)
     output = [0] * n
     count = [0] * 10
@@ -21,12 +21,13 @@ def counting_sort(arr, exp):
         arr[i] = output[i]
 
 def radix_sort(arr):
-    max1 = max(arr)
+    max_num = max(arr)
     exp = 1
-    while max1 // exp > 0:
-        counting_sort(arr, exp)
+    while max_num // exp > 0:
+        counting_sort_exp(arr, exp)
         exp *= 10
 
-arr = [170, 45, 75, 90, 802, 24, 2, 66]
+# User input
+arr = list(map(int, input("Enter integers separated by spaces: ").split()))
 radix_sort(arr)
 print("Radix Sort:", arr)
