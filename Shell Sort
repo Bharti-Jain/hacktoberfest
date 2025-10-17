@@ -1,4 +1,4 @@
-arr = [12, 34, 54, 2, 3]
+arr = list(map(int, input("Enter numbers separated by spaces: ").split()))
 n = len(arr)
 gap = n // 2
 
