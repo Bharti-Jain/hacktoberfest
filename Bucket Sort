@@ -1,21 +1,27 @@
 def bucket_sort(arr):
+    # Create empty buckets
     bucket = []
     for i in range(len(arr)):
         bucket.append([])
 
+    # Put array elements in different buckets
     for j in arr:
-        index_b = int(10 * j)
+        index_b = int(10 * j)   # assumes input is between 0 and 1
         bucket[index_b].append(j)
 
+    # Sort individual buckets
     for i in range(len(arr)):
         bucket[i] = sorted(bucket[i])
 
+    # Concatenate all buckets into arr[]
     k = 0
     for i in range(len(arr)):
         for j in range(len(bucket[i])):
             arr[k] = bucket[i][j]
             k += 1
 
-arr = [0.89, 0.45, 0.23, 0.68, 0.12, 0.99, 0.56]
+# Take input from user
+arr = list(map(float, input("Enter decimal numbers between 0 and 1 separated by spaces: ").split()))
+
 bucket_sort(arr)
 print("Bucket Sort:", arr)
